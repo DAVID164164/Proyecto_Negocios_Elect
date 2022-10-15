@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario</title>
+
+    <link rel="stylesheet" href="formt.css">
+    <link rel="stylesheet" href="datos.html"> 
+
+</head>
+<body>
+
+    <section class="form_wrap">
+
+        <section class="lateral">
+
+        </section>
+
+        <form action="text/javascript" method="POST" name="form_regis" class="form_inf" id="form">
+            <h2>formulario de prueba</h2>
+            <div class="user_info">
+                <label for="Nombre">Nombres *</label>
+                <input type="text" id="nombreid" name="us" placeholder="Nombre">
+                
+                <label for="Apellido">Apellidos *</label>
+                <input type="text" id="apellidoid" name="us" placeholder="Apellido">
+
+
+                <label for="Correo">Correo *</label>
+                <input type="text" id="correoid" name="cor" placeholder="ejemplo@gmail.com">
+
+                <label for="telefono">Teléfono *</label>
+                <input type="text" id="telefonoid" name="us" placeholder="1871-8557">
+
+
+                <label for="Direccion">Dirección *</label>
+                <input type="text" id="direcid" name="us" placeholder="Santa Ana, El Salvador">
+
+                   <h4>Departamentos</h4>
+                   <br>
+                  <div id="checks">
+               <div Style="float: left;">
+                   <label for="santa">Santa Ana </label><input type="checkbox" name="depar" id="santa" value="Santa Ana"></div>
+
+                  <div Style="float: left; margin-left: 25px;"><label for="ahuachapan">Ahuachapán</label><input type="checkbox" name="depar" id="ahua" value="Ahuachapan"></div>
+
+                   <div Style="float: left; margin-left: 25px;"><label for="Sonsonate">Sonsonate </label><input type="checkbox" name="depar" id="sonso" value="Sonsonate"></div>
+
+                  </div>
+
+                   <h4>Sexo</h4>
+                    <br>
+                   <div id="radiob">
+                <div Style="float: left;">
+                    <label for="hombre">Hombre </label><input type="radio" name="sexo" id="hombre" value="Hombre"></div>
+
+                   <div Style="float: left; margin-left: 25px;"><label for="mujer">Mujer</label><input type="radio" name="sexo" id="mujer" value="Mujer"></div>
+
+                    <div Style="float: left; margin-left: 25px;"><label for="reservado">Reservado </label><input type="radio" name="sexo" id="reser" value="Reservado"></div>
+
+                   </div>
+
+                
+
+                <!--<input type="button" value="Enviar Mensaje" id="btnSend" onclick="process()">-->
+                
+                  <a href="datos.html" ><button Style="margin-top: 50px" id="btnEnv" onclick="getdata()" >Enviar</button></a>
+              
+                 <button Style="margin-top: -50px" id="btnlimp" >Limpiar</button>
+
+            </div>
+        </form>
+    </section>
+
+
+    <script type="text/javascript">
+         
+        var getdata= function() {
+      
+            var nombred = document.getElementById('nombreid').value;
+            var aplellidod = document.getElementById('apellidoid').value;
+            var correod = document.getElementById('correoid').value;
+            var telefonod = document.getElementById('telefonoid').value;
+            var inputdepar= document.form_regis.depar;
+            var inputrad= document.form_regis.sexo;
+
+            document.writeln("los datos ingresados son:  "+nombred +" - "+apellidod+" - "+correod+" - "+telefonod );
+
+            for (x = 0; x < inputrad.length; x++) {
+                
+                if (inputrad[x].checked) {
+                    document.writeln("|  |Su sexo es: "+inputrad[x].value);
+                }
+                
+            }
+
+            for (x = 0; x < inputdepar.length; x++) {
+                
+                if (inputdepar[x].checked) {
+                    document.writeln("|  |Los departamentos seleccionados son: "+inputdepar[x].value);
+                }
+                
+            }
+
+           /* document.form_regis.us.value=usuariod;
+            document.form_regis.cor.value= correod;
+            document.form_regis.dep.value=departamentod;
+            document.form_regis.msn.value= mensajed;*/
+
+            
+      
+            console.log(nombred+" "+apellidod+" "+correod+" "+departamentod);
+
+      
+        }
+            
+        </script> 
+
+
+
+   <!-- <script type="text/javascript">
+         
+        let btnClear =document.querySelector("button");
+        let inputs =document.querySelectorAll("input");
+
+        btnClear.addEventListener("click", () => {
+            
+            alert("el Form se a enviado y limpiado");
+            inputs.forEach(input => input.value =""); 
+
+            }) ;
+            
+        </script> -->
+
+       
+   
+</body>
+</html>
